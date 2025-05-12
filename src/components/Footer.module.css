@@ -100,4 +100,7 @@ padding: 30px;
 .responsiveBreak{
     display: none;
 }
+.footerEnd{
+    padding: 10px;
+}
 }
