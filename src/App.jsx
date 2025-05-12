@@ -2,6 +2,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import StudentList from './pages/StudentList';
 import './App.css';
+import Footer from './components/Footer';
+
 
 const App = () => {
   return (
@@ -13,6 +15,7 @@ const App = () => {
             <Route path="/" element={<StudentList />} />
           </Routes>
         </main>
+        <Footer/>
       </div>
     </Router>
   );
