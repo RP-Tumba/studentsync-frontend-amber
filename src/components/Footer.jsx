@@ -18,16 +18,17 @@ const Footer = () => {
                      
                           <h4>Our address</h4>
                           <div className={styles.address}>
-                                  <div className={styles.icons}>
-                                      <LocationOnIcon/>
-                                       <QueryBuilderIcon/>
-                                   </div>
-
-                                   <div className={styles.addressContent}>
-                                      <p>Gasabo district,Kinyinya Sector, Mutarama cell, Rusenyi village <br className={styles.responsiveBreak} />
+                                  
+                                      <div className={styles.addressparagraph}>
+                                         <LocationOnIcon/>
+                                         <p>Gasabo district,Kinyinya Sector, Mutarama cell, Rusenyi village <br className={styles.responsiveBreak} />
                                       KG 566 St, Kigali,Rwanda</p>
-                                      <p>Working Hours: Monday- Friday: 08:00-17:00</p>
-                                   </div>
+                                      </div>
+                                      <div className={styles.addressparagraph}>
+                                         <QueryBuilderIcon/>
+                                          <p>Working Hours: Monday- Friday: 08:00-17:00</p>
+                                      </div>
+                                 
                           </div>
                           
                       
