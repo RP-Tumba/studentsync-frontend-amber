@@ -1,0 +1,70 @@
+
+.SearchBarInput{
+  width: 180px;
+  border: none;
+  font-size: 16px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  background-color: lightgray;
+  outline: none !important;
+}
+.SearchSection{
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+ 
+}
+.studentTableName{
+  color: aquamarine;
+  font-size: 30px;
+}
+.searchLeft{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.SearchIcon{
+  position: relative;
+  margin-right: -12px;
+  height: 39px;
+  background-color: lightgray;
+  border: none;
+  outline: none !important;
+  overflow: hidden;
+  
+}
+.addSection{
+  display: flex;
+  flex-direction: row;
+  padding-right: 10px;
+}
+.headerPart{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.addStudent{
+  background-color: greenyellow;
+  width: 180px;
+  height: 45px;
+  border: none;
+  font-size: 16px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  outline: none;
+  outline: none !important;
+  
+}
+.addIcon{
+  background-color: greenyellow;
+  position: relative;
+  margin-right: -12px;
+  height: 45px;
+  border: none;
+  outline:none ;
+  outline: none !important;
+  overflow: hidden;
+}
