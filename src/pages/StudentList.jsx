@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 
-
 import useStudentStore from "../store/studentStore";
 
 const StudentList = () => {
@@ -9,7 +8,6 @@ const StudentList = () => {
 
   useEffect(() => {
     fetchStudents();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (loading) return <div>Loading...</div>;

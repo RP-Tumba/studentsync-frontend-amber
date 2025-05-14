@@ -1,15 +1,15 @@
 // api.js
 
-import axios from 'axios';
+import axios from "axios";
 
-import { supabase } from './supabase';
+import { supabase } from "./supabase";
 
 /**
  * Converts a string from camelCase to snake_case
  * @param {string} str - The camelCase string to convert
  * @return {string} The snake_case string
  */
-const camelToSnake = str => {
+const camelToSnake = (str) => {
   if (typeof str !== 'string') return str;
   return str.replace(/([A-Z])/g, letter => `_${letter.toLowerCase()}`);
 };
@@ -19,7 +19,7 @@ const camelToSnake = str => {
  * @param {string} str - The snake_case string to convert
  * @return {string} The camelCase string
  */
-const snakeToCamel = str => {
+const snakeToCamel = (str) => {
   if (typeof str !== 'string') return str;
   return str.replace(/_([a-z])/g, (_, letter) => letter.toUpperCase());
 };
@@ -29,7 +29,7 @@ const snakeToCamel = str => {
  * @param {Object} obj - The object with snake_case keys
  * @return {Object} A new object with camelCase keys
  */
-const objectToCamelCase = obj => {
+const objectToCamelCase = (obj) => {
   if (obj === null || typeof obj !== 'object') {
     return obj;
   }
@@ -50,7 +50,7 @@ const objectToCamelCase = obj => {
  * @param {Object} obj - The object with camelCase keys
  * @return {Object} A new object with snake_case keys
  */
-const objectToSnakeCase = obj => {
+const objectToSnakeCase = (obj) => {
   if (obj === null || typeof obj !== 'object') {
     return obj;
   }
@@ -69,7 +69,7 @@ const objectToSnakeCase = obj => {
 const api = axios.create({
   baseURL: import.meta.env.VITE_API_URL,
   headers: {
-    'Content-Type': 'application/json',
+    "Content-Type": "application/json",
   },
 });
 
@@ -86,56 +86,63 @@ export const studentService = {
       return {
         success: true,
         count: transformedData.length,
-        data: transformedData,
+        data: transformedData
       };
     } catch (error) {
       console.error('Error fetching students:', error);
       return {
         success: false,
         message: error.message || 'Failed to fetch students',
-        data: [],
+        data: []
       };
     }
   },
 
-  getStudentById: async id => {
+  getStudentById: async (id) => {
     try {
-      const { data, error } = await supabase.from('students').select('*').eq('id', id).single();
+      const { data, error } = await supabase
+        .from('students')
+        .select('*')
+        .eq('id', id)
+        .single();
       if (error) throw error;
       // Transform snake_case to camelCase
       const transformedData = objectToCamelCase(data);
       return {
         success: true,
-        data: transformedData,
+        data: transformedData
       };
     } catch (error) {
       console.error(`Error fetching student with ID ${id}:`, error);
       return {
         success: false,
-        message: error.message || `Failed to fetch student with ID ${id}`,
+        message: error.message || `Failed to fetch student with ID ${id}`
       };
     }
   },
 
-  createStudent: async studentData => {
+  createStudent: async (studentData) => {
     try {
       // Transform camelCase to snake_case for database
       const snakeCaseData = objectToSnakeCase(studentData);
-      console.log('Transformed data for database:', snakeCaseData);
-      const { data, error } = await supabase.from('students').insert([snakeCaseData]).select();
+      console.log("Transformed data for database:", snakeCaseData);
+      const { data, error } = await supabase
+        .from('students')
+        .insert([snakeCaseData])
+        .select();
       if (error) throw error;
       // Transform back to camelCase for frontend
       const transformedData = objectToCamelCase(data[0]);
       return {
         success: true,
         data: transformedData,
-        message: 'Student created successfully',
+        message: 'Student created successfully'
       };
     } catch (error) {
       console.error('Error creating student:', error);
       return {
         success: false,
-        message: error.message || 'Failed to create student',
+        message: error.message || 'Failed to create student'
       };
     }
   },
@@ -155,51 +162,55 @@ export const studentService = {
       return {
         success: true,
         data: transformedData,
-        message: 'Student updated successfully',
+        message: 'Student updated successfully'
       };
     } catch (error) {
       console.error(`Error updating student with ID ${id}:`, error);
       return {
         success: false,
-        message: error.message || `Failed to update student with ID ${id}`,
+        message: error.message || `Failed to update student with ID ${id}`
       };
     }
   },
 
-  deleteStudent: async id => {
+  deleteStudent: async (id) => {
     try {
-      const { error } = await supabase.from('students').delete().eq('student_id', id);
+      const { error } = await supabase
+        .from('students')
+        .delete()
+        .eq('student_id', id);
       if (error) throw error;
       return {
         success: true,
-        message: 'Student deleted successfully',
+        message: 'Student deleted successfully'
       };
     } catch (error) {
       console.error(`Error deleting student with ID ${id}:`, error);
       return {
         success: false,
-        message: error.message || `Failed to delete student with ID ${id}`,
+        message: error.message || `Failed to delete student with ID ${id}`
       };
     }
   },
 
-  searchStudents: async query => {
+  searchStudents: async (query) => {
     try {
-      const { data, error } = await supabase.rpc('search_students', { search_query: query });
+      const { data, error } = await supabase
+        .rpc('search_students', { search_query: query });
       if (error) throw error;
       // Transform snake_case to camelCase
       const transformedData = data.map(student => objectToCamelCase(student));
       return {
         success: true,
         count: transformedData.length,
-        data: transformedData,
+        data: transformedData
       };
     } catch (error) {
       console.error(`Error searching students with query "${query}":`, error);
       return {
         success: false,
         message: error.message || 'Failed to search students',
-        data: [],
+        data: []
       };
     }
   },
@@ -207,20 +218,20 @@ export const studentService = {
 
 // Add interceptor for error handling
 api.interceptors.response.use(
-  response => response,
-  error => {
+  (response) => response,
+  (error) => {
     console.log(error);
     if (error.response) {
-      error.message = error.response.data?.message || 'An error occurred';
+      error.message = error.response.data?.message || "An error occurred";
     } else if (error.request) {
       // The request was made but no response was received
-      error.message = 'No response from the server';
+      error.message = "No response from the server";
     } else {
       // Something happened in setting up the request that triggered an Error
-      error.message = 'Request configuration error';
+      error.message = "Request configuration error";
     }
     return Promise.reject(error);
-  }
+  },
 );
 
 export default api;

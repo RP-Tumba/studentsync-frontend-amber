@@ -1,6 +1,5 @@
 :root{
-    --white-color:white;
-    --green-content:#7ccf00;
-    --black-color:black;
-    --dark-green:#032e15;
+    --green:green;
+    --yellow: yellow;
+    --white: white;
 }
