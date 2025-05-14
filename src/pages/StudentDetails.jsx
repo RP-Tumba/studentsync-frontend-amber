@@ -73,7 +73,7 @@ const StudentDetails = () => {
                       <div className={styles.inputContainer}>
                           <div className={styles.inputgroup}>
                              <label htmlFor="dob">Date Of birth</label>
-                             <input type="text"  placeholder='Date of birth' className={styles.formControl} disabled={editMode}/>
+                             <input type="date"  placeholder='Date of birth' className={styles.formControl} disabled={editMode}/>
                 
                           </div>
                            <div className={styles.inputgroup}>

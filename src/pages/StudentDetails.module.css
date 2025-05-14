@@ -163,7 +163,7 @@ color: grey;
     background-color: var(--green-content);
     border: none !important;
 }
-
+ /* Tablet screen */
 @media (min-width: 768px) and (max-width: 1024px) {
 .topbar{
  flex-direction: column;
@@ -193,5 +193,19 @@ color: grey;
 .formControl{
     width: 60vw;
     
+}
+.inputContainer{
+    margin-bottom: 0px;
+   
+}
+.inputgroup{   
+  margin-bottom: 30px;
+}
+.goback{
+    margin-top: 50px;
+}
+.searchbar{
+    justify-content: end;
+    align-self: flex-end;
 }
 }
