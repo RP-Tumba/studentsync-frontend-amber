@@ -1,0 +1,120 @@
+@import '../main.css';
+
+
+*{
+    outline: none;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+.topbar{
+    display: flex;
+    justify-content: space-between;
+}
+.container{
+    background-color: var(--white-color);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.title{
+    font-weight: 600;
+    font-size: 20px;
+}
+.date{
+    font-weight: 500;
+    color: rgb(179, 171, 171);
+    font-size: 18px;
+}
+.searchbar{
+    background-color: var(--white-color);
+    align-self: self-start;
+    display: flex;
+    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 20px;
+    border-radius: 10px;
+}
+.searchInput{
+    padding: 5px 5px;
+    border: none;
+    font-size: 19px;
+    font-weight: 600;
+}
+.searchInput::placeholder{
+    font-size: 19px;
+    font-weight: 400;
+}
+.topHeader{
+    height: 7vh;
+ background: linear-gradient(to right, #7ccf00, rgba(255, 255, 255, 0.6));
+border-top-left-radius: 15px;
+border-top-right-radius: 15px;
+}
+.mainContainer{
+    padding: 10px 60px;
+}
+.profileConatainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.profile{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+.profilePic img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+.profileNames p{
+    font-weight: 400;
+}
+.editButton{
+background-color: var(--green-content);
+color: var(--white-color);
+font-weight: 600;
+outline: none !important;
+padding: 10px 30px;
+}
+.contentContainer{
+    padding-top: 30px;
+}
+.inputContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 30px;
+   
+}
+.inputgroup{
+    
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+
+
+}
+.inputgroup label{
+    font-size: 20px;
+    margin-bottom: 5px;
+
+}
+.formControl{
+    width: 35vw;
+    padding: 10px;
+    outline: none;
+    background-color: rgb(245, 245, 245);
+    border: none ;
+    border-radius: 10px;
+    font-weight: 400;
+    color: gainsboro;
+    font-size: 19px;
+    transition: border 0.3s ease-in-out;
+}
+.formControl:focus{
+   border: 1px solid var(--green-content);
+}
