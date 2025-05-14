@@ -24,7 +24,8 @@
 }
 
 .studentTable thead{
-  background-color: rgb(190, 244, 192);
+  background-color: rgba(235, 249, 218, 1);
+
 }
 .studentTable th,
 .studentTable td
