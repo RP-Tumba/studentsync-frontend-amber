@@ -6,7 +6,7 @@
 }
 
 .studentTable{
-  width: 95vw;
+  width: 80vw;
   color: #000;
   margin-bottom: 0;
   margin-top: 0;
@@ -39,30 +39,64 @@
 .studentTable td{
   border-bottom: 1px black solid;
 }
+.trow{
+  transition: background-color 0.2s ease-in-out;
+}
+.trow:hover{
+ background-color: rgb(212, 208, 208);
+ cursor: pointer;
+}
 .deleteIcon{
+ 
   color: red;
   cursor: pointer;
 }
 .deleteIcon :hover{
   color: rgb(12, 215, 147);
+
+}
+.EditIcon{
+  color:blue;
+}
+.EditIcon:hover{
+  cursor:default;
+}
+.delete{
+  color: red;
+ font-weight: bold;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
 }
 .loader {
-
-  width: 50px;
-  padding: 8px;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: #25b09b;
-  --_m: 
-    conic-gradient(#0000 10%,#000),
-    linear-gradient(#000 0 0) content-box;
-  -webkit-mask: var(--_m);
-          mask: var(--_m);
-  -webkit-mask-composite: source-out;
-          mask-composite: subtract;
-  animation: l3 1s infinite linear;
-}
-@keyframes l3 {to{transform: rotate(1turn)}}
+    position: relative;
+    width: 64px;
+    height: 64px;
+    background: #fff;
+    border-radius: 50%;
+  }
+  .loader:after{
+    content: '';
+    position: absolute;
+    inset: 8px;
+    margin: auto;
+    background: #222b32;
+     border-radius: 50%;
+  }
+  .loader:before{
+    content: '';
+    position: absolute;
+    inset: 0px;
+    margin: auto;
+    background: #de3500;
+    animation: crlMugLoader 2s linear infinite alternate;
+  }
+  @keyframes crlMugLoader {
+    0%  ,10% { transform: translateY(64px) }
+    90% , 100% { transform: translateY(0px) }
+  }
+      
 .loaderContainer{
   display: flex;
   justify-content: center;
