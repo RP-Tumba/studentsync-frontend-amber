@@ -1,8 +1,22 @@
-import React from "react";
+
 import SearchIcon from '@mui/icons-material/Search';
 import AddIcon from '@mui/icons-material/Add';
 import SearchCss from '../components/searchBar.module.css';
-const SearchBar=()=>{
+import { useEffect, useState } from 'react';
+import {studentService} from '../lib/api';
+const SearchBar=({setStudents})=>{
+const[query,setquery] = useState("");
+
+
+
+useEffect(()=>{
+const searchfunction = async(query)=>{
+  const result =  await studentService.searchStudents(query);
+  setStudents(result.data)
+
+}
+searchfunction(query)
+},[query])
   return(
     <>
     <div className={SearchCss.headerPart}>
@@ -13,7 +27,7 @@ const SearchBar=()=>{
     <SearchIcon/>
     </button>
     <input type="text"  placeholder="Search" 
-    className={SearchCss.SearchBarInput}/>
+    className={SearchCss.SearchBarInput} value={query} onChange={e => setquery(e.target.value)}/>
     </div>
     <div className={SearchCss.addSection}>
       <button className={SearchCss.addIcon}><AddIcon/></button>
