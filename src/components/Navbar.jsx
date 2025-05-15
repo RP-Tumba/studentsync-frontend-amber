@@ -1,17 +1,11 @@
 import style from './Nav.module.css';
-import logo from '../assets/logo.png';
-
 import { Link } from 'react-router-dom';
 const Navbar = () => {
   return (
     <>
       <nav>
         <div className={style.header}>
-          <div className={style.head1}>
-            {' '}
-            <img className="img1" src={logo} width={30} />
-            STUDENTSYNC
-          </div>
+          <div className={style.head1}>STUDENTSYNC</div>
           <div className={style.head2}>
             <Link>Home</Link>
           </div>
