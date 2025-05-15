@@ -56,13 +56,10 @@ const StudentTable=()=>{
         <thead>
           <tr>
             <th>Profile</th>
-          <th>First name</th>
-          <th>Last name</th>
-          <th>Contact Number</th>
+          <th>username</th>
           <th>Student Id</th>
-          <th>Date of Birth</th>
-          <th>Email</th>
           <th>Enrollment Date</th>
+          <th>Status</th>
           <th>Action</th>
         </tr>
         </thead>
@@ -78,13 +75,13 @@ const StudentTable=()=>{
                 {student.name}
               </div>
             </td>
-            <td>{student.firstName}</td>
-            <td>{student.lastName}</td>
-            <td>{student.contactNumber}</td>
+      
+            <td>{`${student.firstName} ${student.lastName}`}</td>
             <td>{student.studentId}</td>
-            <td>{student.dateOfBirth}</td>
-            <td>{student.email}</td>
-            <td>{student.enrollmentDate}</td>
+            
+           <td>{student.enrollmentDate}</td>
+          <td>Enrolled</td>
+           
             <td className={Tablecss.deleteIcon}>
               <DeleteIcon onClick={()=>deleteFunction(student.studentId)}/>
               <EditIcon className={Tablecss.EditIcon} onClick={()=>handleNavigate(student.id)}/>
