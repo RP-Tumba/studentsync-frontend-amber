@@ -42,7 +42,7 @@ const StudentTable=()=>{
       }
   return(
     <div className={Tablecss.mainstudentContainer}>
-      <SearchBar/>
+      <SearchBar setStudents={setStudents}/>
          {loading && 
         <div className={Tablecss.loaderContainer}>
              <div className={Tablecss.loader}>
