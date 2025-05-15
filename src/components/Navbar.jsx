@@ -1,4 +1,5 @@
 import style from './Nav.module.css';
+import logo from '../assets/logo.png';
 
 import { Link } from 'react-router-dom';
 const Navbar = () => {
@@ -7,7 +8,8 @@ const Navbar = () => {
       <nav>
         <div className={style.header}>
           <div className={style.head1}>
-            <img className="img1" src="" />
+            {' '}
+            <img className="img1" src={logo} width={30} />
             STUDENTSYNC
           </div>
           <div className={style.head2}>

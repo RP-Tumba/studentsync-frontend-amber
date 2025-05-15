@@ -57,9 +57,4 @@ a {
 }
 a:hover {
   color:var(--green-content);
-}
- .img1 img{
-    width:60px;
-    border-radius: 0.5px;
-    height:20px;
-}
+};
