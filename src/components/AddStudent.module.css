@@ -1,0 +1,117 @@
+@import '../main.css';
+
+
+.grid{
+    display: grid;
+    gap:20px;
+    grid-template-areas:
+    'head head'
+    'one two'
+    'three four'
+    'five five'
+    'six six'
+    'seven seven'
+    'butto butto';
+ background-color:rgb(228, 235, 234);
+  width: 650px;
+  padding-bottom: 80px;
+  border-radius: 20px;
+  justify-content: center;
+}
+
+.head{
+    grid-area: head;
+    width: 100%;
+    align-self: center;
+    justify-self: center;
+    padding-left: 190px;
+    background-color: #bbf7d0;
+    border-radius: 15px;
+}
+.one{
+    grid-area: one;
+    color: rgb(0, 0, 0);
+}
+.two{
+    color: rgb(0, 0, 0);
+    grid-area: two;
+}
+.three{
+    color: rgb(0, 0, 0);
+    grid-area: three;
+}
+.four{
+    color: rgb(0, 0, 0);
+    grid-area: four;
+}
+.five{
+    color: rgb(0, 0, 0);
+    grid-area: five;
+}
+.six{
+    color: rgb(0, 0, 0);
+    grid-area: six;
+}
+.seven{
+    color: rgb(0, 0, 0);
+    grid-area: seven;
+}
+.butto{
+    display: flex;
+     justify-content:space-around;
+     grid-area: butto;
+     color:white;
+     }
+button{
+    background-color: white;
+  border:#7ccf00 2px solid;
+  color: #7ccf00;
+  padding-left: 40px;
+    padding-right: 40px;
+}
+
+input{
+    background-color: white;
+ height: 40px;
+ width: 100%;
+ border:rgb(0, 0, 0) 2px solid;
+ border-radius: 8px;
+ color: rgb(0, 0, 0);
+ font-size: large;
+}
+.cancel{
+    padding-left: 40px;
+    padding-right: 40px;
+    width: 30%;
+}
+.add{
+    background-color: #7ccf00;
+    color:white;
+
+    padding-left: 40px;
+    padding-right: 40px;
+    width: 30%;
+}
+.add:hover{
+     background-color: #7ccf00;
+    color:white;
+
+    padding-left: 40px;
+    padding-right: 40px;
+}
+@media(max-width:680px){
+    .grid{
+    display: flex;
+    flex-direction: column;
+    padding-top: 70px;
+    gap:20px;
+ justify-content: center;
+ background-color: rgb(132, 201, 186);
+}
+}
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px;
+}

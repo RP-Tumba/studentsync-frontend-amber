@@ -1,0 +1,273 @@
+@import '../main.css';
+
+.home {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--white-color);
+  padding: 2rem;
+  color: #222;
+}
+
+.topDiv {
+  display: flex;
+ gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 4rem;
+}
+
+.left h4 {
+  color: var( --green-content);
+  font-size: 23px;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.left h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: var(--dark-green);
+  overflow: hidden;
+}
+
+.left p {
+  margin-bottom: 1.5rem;
+  color:rgb(253, 183, 32);
+  font-size: 23px;
+  font-weight: 700;
+}
+
+.buttons button {
+  background-color: white;
+  border: 2px solid green;
+  padding: 0.6rem 1.2rem;
+  margin-right: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+.buttons{
+    display: flex;
+    gap: 30px;
+}
+.buttons button:hover {
+  background-color: green;
+  color: white;
+}
+#all-btn{
+    background-color: var(--green-content);
+    color: var(--white-color);
+    border: none !important
+}
+.imagesDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.topImage {
+  width: 550px;
+  border-radius: 10px;
+}
+.images{
+    display: flex;
+    gap: 20px;
+}
+.images img {
+   
+  width: 162px;
+  height: 162px;
+  border-radius: 5px;
+  margin-right: 0.5rem;
+}
+
+.secondPart .head p,
+.bottomPart .head p {
+  color: var(--green-content);
+  font-size: 23px;
+  font-weight: 800;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.secondPart .head h2,
+.bottomPart .head h3 {
+    color: var(--dark-green);
+    text-align: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.cards {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1;
+  min-width: 250px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1rem;
+  background-color: #f9f9f9;
+}
+
+.card .head {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.card .head .icon {
+  color: rebeccapurple;
+}
+#displined-card{
+    background-color: rebeccapurple;
+    color: var(--white-color);
+}
+#displined-card p{
+    color: var(--white-color);
+}
+.card h3 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.card p {
+  color: #555;
+  font-size: 0.95rem;
+}
+.bottomPart{
+    margin: 30px;
+}
+.bottom-part-nav{
+    display: flex;
+    justify-content: center;
+}
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  position: relative;
+  border-bottom: 3px solid #eee;
+  padding-bottom: 3px;
+  margin-bottom: 20px;
+  width: 60%;
+  
+}
+
+.nav p {
+  margin: 0;
+  font-size: 20px;
+  color: #555;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  padding-bottom: 7px;
+  transition: color 0.3s;
+}
+
+.nav p.active {
+  color: var(--green-content); 
+  font-weight: 600;
+  overflow: hidden;
+}
+
+.nav p.active::after {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: #7AC943;
+  border-radius: 2px;
+  z-index: 5000;
+}
+
+
+.bottomPart .images {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.bottomPart .image {
+  flex: 1;
+  min-width: 200px;
+}
+
+.bottomPart .image img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.bottomPart .image p {
+  margin-top: 0.5rem;
+  text-align: center;
+  color: #444;
+}
+.sportImageConatainer{
+display: flex;
+}
+.sportImage{
+position: relative;
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 992px) {
+  .topDiv {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .imagesDiv {
+    align-self: center;
+    margin-top: 1.5rem;
+  }
+
+  .cards {
+    flex-direction: column;
+  }
+
+  .bottomPart .images {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .left h1 {
+    font-size: 1.8rem;
+  }
+
+  .buttons button {
+    margin-bottom: 0.8rem;
+    width: 100%;
+  }
+
+  .card h3 {
+    font-size: 1rem;
+  }
+
+  .card p {
+    font-size: 0.9rem;
+  }
+
+  .bottomPart .nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .bottomPart .image {
+    width: 100%;
+  }
+}

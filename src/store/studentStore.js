@@ -40,17 +40,50 @@ const useStudentStore = create((set, get) => ({
   updateStudent: async (id, studentData) => {
     set({ loading: true, error: null });
     // implementation goes here
+     try {
+      const response = await studentService.updateStudent(id,studentData);
+
+      if (response.success) {
+        set({ students: response.data, loading: false });
+      } else {
+        set({ error: response.message, loading: false });
+      }
+    } catch (error) {
+      set({ error: error.message, loading: false });
+    }
   },
 
   // Delete student
   deleteStudent: async id => {
     set({ loading: true, error: null });
     // implementation goes here
+     try {
+      const response = await studentService.deleteStudent(id);
+
+      if (response.success) {
+        set({ students: response.data, loading: false });
+      } else {
+        set({ error: response.message, loading: false });
+      }
+    } catch (error) {
+      set({ error: error.message, loading: false });
+    }
   },
 
   searchStudents: async query => {
     set({ loading: true, error: null });
     // Implementation goes here
+     try {
+      const response = await studentService.searchStudents(query);
+
+      if (response.success) {
+        set({ students: response.data, loading: false });
+      } else {
+        set({ error: response.message, loading: false });
+      }
+    } catch (error) {
+      set({ error: error.message, loading: false });
+    }
   },
 }));
 

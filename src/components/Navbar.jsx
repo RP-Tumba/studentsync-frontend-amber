@@ -1,5 +1,26 @@
+import style from './Nav.module.css';
+import { Link } from 'react-router-dom';
 const Navbar = () => {
-  return <nav>Navbar</nav>;
+  return (
+    <>
+      <nav>
+        <div className={style.header}>
+          <div className={style.head1}>STUDENTSYNC</div>
+          <div className={style.head2}>
+            <Link to="/">Home</Link>
+          </div>
+          <div className={style.head3}>
+            <Link to="/addstudent">Add Student</Link>
+          </div>
+          <div className={style.head4}>
+            <Link to="/allstudent">
+              <button>All Student</button>
+            </Link>
+          </div>
+        </div>
+      </nav>
+    </>
+  );
 };
 
 export default Navbar;
