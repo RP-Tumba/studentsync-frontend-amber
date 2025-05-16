@@ -1,7 +1,7 @@
 import style from './body1.module.css';
 import people from '../assets/body/people.png';
 
-const Body = () => {
+const Bodyy = () => {
   return (
     <>
       <div className={style.body}>
@@ -22,4 +22,4 @@ const Body = () => {
   );
 };
 
-export default Body;
+export default Bodyy;

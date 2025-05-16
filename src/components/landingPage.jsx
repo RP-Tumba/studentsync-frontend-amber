@@ -2,12 +2,10 @@ import style from './Body.module.css';
 import laugh from '../assets/body/laugh.jpg';
 import sports from '../assets/body/sports.jpg';
 import remember from '../assets/body/remember.jpg';
-import Body from './body';
 
 const Galleries = () => {
   return (
     <div className={style.all}>
-      <Body />
       <center>
         <strong>
           <span className={style.spn}>Gallery</span>

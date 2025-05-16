@@ -3,11 +3,12 @@ import Galleries from './landingPage';
 import heart from '../assets/body/heart.png';
 import frame from '../assets/body/frame.png';
 import vector from '../assets/body/vector.png';
+import Bodyy from './body';
 
 const Body = () => {
   return (
     <div>
-      <Galleries />
+      <Bodyy />
       <div className={style.bdy}>
         <center>
           <strong>
@@ -55,6 +56,7 @@ const Body = () => {
           </div>
         </center>
       </div>
+      <Galleries />
     </div>
   );
 };
