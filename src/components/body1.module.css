@@ -1,0 +1,65 @@
+@import '../main.css';
+
+h1{
+    font-size:xx-large;
+}
+.Nav{
+    padding-top: 10px;
+  display: flex;
+    justify-content: space-between;
+    align-items: center;
+      padding-right: 100px;
+}
+.but1{
+    background-color: white;
+    border:2px #7ccf00 solid;
+    color:#7ccf00;
+    padding-right:20px
+}
+.but2{
+    background-color: white;
+    border:2px #7ccf00 solid;
+    color:#80ce1a;
+}
+button{
+    flex-basis: 130px;
+  
+}
+button:focus{
+     background-color: #7ccf00;
+     border:2px #7ccf00 solid;
+    color:#ffffff
+}
+button:hover {
+  border-color: #7ccf00;;
+}
+.body{
+    display: flex;
+    justify-content: space-around;
+
+}
+.intro{
+    padding-left: 30px;
+    align-self: center;
+}
+
+@media(max-width:680px){
+.body{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    padding-top: 40px;
+
+}
+.Nav{
+    padding-top: 10px;
+  display: flex;
+    justify-content: space-between;
+    padding-right: 0px;
+}
+}
+.photo{
+    width: 600px;
+    height: auto;
+    border-radius: 8px;
+}
