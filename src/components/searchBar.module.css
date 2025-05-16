@@ -1,24 +1,26 @@
 
 .SearchBarInput{
-font-size: 16px;
-padding: 10px;
-padding-left: 20px !important;
-margin-bottom: 20px;
-outline: none !important;
-width: 409;
-height: 50px;
-top: 256px;
-
-border-radius: 15px;
 border: none;
-background-color: rgba(244, 244, 244, 1);
-padding-left: 10px;
-color: black;
+background: none;
+font-size: 18px;
+}
+.SearchBarInput::placeholder{
+  padding: 23px 0;
 }
 .SearchSection{
-  padding: 20px;
+  padding: 10px;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ border-radius: 15px;
+ background-color: rgba(244, 244, 244, 1);
+ 
+}
+.searchcontainer{
   display: flex;
-  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
  
 }
 .studentTableName{
@@ -27,21 +29,12 @@ color: black;
 }
 .searchLeft{
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 40px;
+  flex-wrap: wrap;
+   gap: 30px;
 }
 .SearchIcon{
-  position: relative;
-  padding: auto;
-  width: 50px;
-  height: 50px;
-  margin-right: -15px;
-  background-color:  rgba(244, 244, 244, 1);
-  color: black;
-  border: none;
-  outline: none !important;
-  overflow: hidden;
+  font-size: 90px;
   
 }
 .addSection{
@@ -56,16 +49,21 @@ color: black;
 }
 .addStudent{
   background-color: rgba(131, 199, 39, 1);
-  width: 180px;
-  height: 45px;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
   border: none;
   font-size: 16px;
   padding: 10px;
-  margin-bottom: 20px;
   border-radius: 8px;
   outline: none;
-  outline: none !important;
-  
+  outline: none !important; 
+  transition:  all 0.5ms ease-in-out,;
+
+}
+.addStudent:hover{
+  background-color:  rgb(61, 104, 1);
+
 }
 .addIcon{
   background-color: rgba(131, 199, 39, 1);

@@ -19,22 +19,20 @@ searchfunction(query)
 },[query])
   return(
     <>
-    <div className={SearchCss.headerPart}>
-      <h1 className={SearchCss.studentTableName}>All students</h1>
-    <div className={SearchCss.searchLeft}>
-       <div className={SearchCss.SearchSection}>
-      <button className={SearchCss.SearchIcon}>
-    <SearchIcon/>
-    </button>
-    <input type="text"  placeholder="Search" 
-    className={SearchCss.SearchBarInput} value={query} onChange={e => setquery(e.target.value)}/>
-    </div>
-    <div className={SearchCss.addSection}>
-      <button className={SearchCss.addIcon}><AddIcon/></button>
-     <button className={SearchCss.addStudent}>Add student</button>
+    <div className={SearchCss.searchcontainer}>
+      <h2 className={SearchCss.studentTableName}>All students</h2>
+      <div className={SearchCss.searchLeft}>
+               <div className={SearchCss.SearchSection}>
+                <SearchIcon className={SearchCss.SearchIcon}/>
+                <input type="text"  placeholder="Search" 
+                   className={SearchCss.SearchBarInput} value={query} onChange={e => setquery(e.target.value)}/>
+               </div>
+   
+               <button className={SearchCss.addStudent}> <AddIcon/> Add student</button>
+    
     </div>
     </div>
-    </div>
+   
     </>
     
   )
