@@ -6,7 +6,7 @@ import Footer from './components/Footer';
 import StudentDetails from './pages/StudentDetails';
 import Addstudent from './components/AddStudent';
 import Navbar from './components/Navbar';
-import Body from './components/landing2';
+import Home from './pages/Home'
 import StudentTable from './components/studentTable';
 const App = () => {
   return (
@@ -15,7 +15,7 @@ const App = () => {
         <Navbar />
         <main className="main-content">
           <Routes>
-            <Route path="/" element={<Body />} />
+            <Route path="/" element={<Home />} />
             <Route path="/student/:id" element={<StudentDetails />} />
             <Route path="/allstudent" element={<StudentTable />} />
             <Route path="/addstudent" element={<Addstudent />} />
