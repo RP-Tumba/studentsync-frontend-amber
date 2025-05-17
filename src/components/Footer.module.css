@@ -69,10 +69,7 @@ gap: 5px;
 }
 
 }
-.icons{
-    padding-right: 10px;
-    gap: 0px;
-}
+
 /* Mobile */
 @media (max-width: 767px) {
     .footerRight h2{

@@ -1,117 +1,118 @@
-@import '../main.css';
-
-
-.grid{
-    display: grid;
-    gap:20px;
-    grid-template-areas:
-    'head head'
-    'one two'
-    'three four'
-    'five five'
-    'six six'
-    'seven seven'
-    'butto butto';
- background-color:rgb(228, 235, 234);
-  width: 650px;
-  padding-bottom: 80px;
-  border-radius: 20px;
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
   justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 
-.head{
-    grid-area: head;
-    width: 100%;
-    align-self: center;
-    justify-self: center;
-    padding-left: 190px;
-    background-color: #bbf7d0;
-    border-radius: 15px;
-}
-.one{
-    grid-area: one;
-    color: rgb(0, 0, 0);
-}
-.two{
-    color: rgb(0, 0, 0);
-    grid-area: two;
-}
-.three{
-    color: rgb(0, 0, 0);
-    grid-area: three;
-}
-.four{
-    color: rgb(0, 0, 0);
-    grid-area: four;
-}
-.five{
-    color: rgb(0, 0, 0);
-    grid-area: five;
-}
-.six{
-    color: rgb(0, 0, 0);
-    grid-area: six;
-}
-.seven{
-    color: rgb(0, 0, 0);
-    grid-area: seven;
-}
-.butto{
-    display: flex;
-     justify-content:space-around;
-     grid-area: butto;
-     color:white;
-     }
-button{
-    background-color: white;
-  border:#7ccf00 2px solid;
-  color: #7ccf00;
-  padding-left: 40px;
-    padding-right: 40px;
+.modal {
+  position: relative;
+  top:30px;
+  background-color: #f9fafb;
+  padding: 20px; /* Reduced from 40px */
+  border-radius: 16px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  height: auto; /* Ensures modal adjusts to content */
 }
 
-input{
-    background-color: white;
- height: 40px;
- width: 100%;
- border:rgb(0, 0, 0) 2px solid;
- border-radius: 8px;
- color: rgb(0, 0, 0);
- font-size: large;
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; 
 }
-.cancel{
-    padding-left: 40px;
-    padding-right: 40px;
-    width: 30%;
-}
-.add{
-    background-color: #7ccf00;
-    color:white;
 
-    padding-left: 40px;
-    padding-right: 40px;
-    width: 30%;
+.header {
+  text-align: center;
+  border: 2px solid rgb(188, 202, 171);
+  border-radius: 10px;
+  padding: 2px; 
 }
-.add:hover{
-     background-color: #7ccf00;
-    color:white;
+.header img{
+  width: 200px
+}
+.header h2 { 
+  color: #16a34a;
+  font-size: 22px; 
+  font-weight: bold;
+}
 
-    padding-left: 40px;
-    padding-right: 40px;
+.header p {
+  font-size: 14px; 
+  color: #4b5563;
 }
-@media(max-width:680px){
-    .grid{
-    display: flex;
-    flex-direction: column;
-    padding-top: 70px;
-    gap:20px;
- justify-content: center;
- background-color: rgb(132, 201, 186);
+
+.inputGroup {
+  display: flex;
+  gap: 10px; 
+  flex-wrap: wrap;
 }
+
+.inputGroup input {
+  flex: 1;
 }
-.flex{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 30px;
+
+input[type='text'],
+input[type='email'],
+input[type='date'] {
+  padding: 10px; /* Reduced from 12px */
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  width: 100%;
+  font-size: 15px; /* Slightly smaller */
+  background-color: white;
+  color: #111827;
+}
+
+input:focus {
+  outline: none;
+  border-color: #16a34a;
+  box-shadow: 0 0 0 2px rgba(22, 163, 74, 0.2);
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px; /* Reduced from 20px */
+}
+
+.addBtn {
+  background-color: #16a34a;
+  color: white;
+  border: none;
+  padding: 10px 20px; /* Reduced from 12px 24px */
+  border-radius: 8px;
+  font-size: 15px; /* Slightly smaller */
+  cursor: pointer;
+  flex: 1;
+}
+
+.cancelBtn {
+  background-color: white;
+  color: #16a34a;
+  border: 2px solid #16a34a;
+  padding: 10px 20px; /* Reduced */
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  flex: 1;
+}
+
+.addBtn:hover {
+  background-color: #15803d;
+}
+
+.cancelBtn:hover {
+  background-color: #f0fdf4;
+}
+
+.enrollement {
+  margin-bottom: 0;
 }

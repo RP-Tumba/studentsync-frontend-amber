@@ -231,7 +231,7 @@ const handleSubmission =async(e)=>{
                      </div>
 
                      <div className={styles.inputContainer}>
-                         <button className={styles.goback} onClick={()=>navigate("/")}>
+                         <button className={styles.goback} onClick={()=>navigate("/allstudent")}>
                           <ArrowBackIcon/>
                           Go back</button>
                      </div>

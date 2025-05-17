@@ -9,112 +9,109 @@ import image7 from "../assets/images/b2.jpg";
 import VolunteerActivismIcon from "@mui/icons-material/VolunteerActivism";
 import SnoozeRoundedIcon from "@mui/icons-material/SnoozeRounded";
 import DirectionsRunRoundedIcon from "@mui/icons-material/DirectionsRunRounded";
+import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import { useNavigate } from "react-router-dom";
 const HomePage = () => {
-  return (
-    <div className="home">
-      <div className="topDiv">
-        <div className="left">
-          <h4>Student management platform</h4>
-          <h1>
-            STUDENTSYNC <br /> MANAGEMENT WEB APP
-          </h1>
-          <p>students for the accademic Year 2025/2026</p>
-          <div className="buttons">
-            <button>learn more</button>
-            <button id="all-btn">all students</button>
-          </div>
-        </div>
-        <div className="imagesDiv">
-          <img className="topImage" src={image1} alt="" />
-          <div className="images">
-            <img src={image2} alt="" />
-            <img src={image3} alt="" />
-            <img src={image4} alt="" />
-          </div>
-        </div>
-      </div>
-      <div className="secondPart">
-        <div className="head">
-          <p>vibrant culture</p>
-          <h2>The Gym College Student management</h2>
-        </div>
-        <div className="cards">
-          <div className="card">
-            <div className="head">
-              <div>
-                <VolunteerActivismIcon className="icon" />
-              </div>
-              <h3>Digital Transformation</h3>
-            </div>
-            <p>
-              Digital transformation empowers students with tools and skills
-              that extend beyond technical proficiency, fostering a learning
-              environment where ethical digital citizenship and proper online
-              conduct become the bedrock of their future success in an
-              increasingly connected world.
-            </p>
-          </div>
-          <div className="card" id="displined-card">
-            <div className="head">
-              <div>
-                <SnoozeRoundedIcon id="icon-displine"/>
-              </div>
-              <h3>Discipline and productive</h3>
-            </div>
-            <p>
-              Discipline in time, as well as discipline in all matters and
-              possessions. Organized and able to manage their agenda/activities
-              so that all their time can be valuable and beneficial.
-            </p>
-          </div>
-          <div className="card">
-            <div className="head">
-              <div>
-                <DirectionsRunRoundedIcon
-                  style={{ color: "rgb(126, 71, 4)" }}
-                />
-              </div>
-              <h3>Race towards goodness</h3>
-            </div>
-            <p>
-              Competing and striving in goodness. Having speed and accuracy in
-              doing good deeds. Trained to act swiftly in matters, completing
-              tasks quickly and efficiently.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div className="bottomPart">
-        <div className="head">
-          <p>Gallery</p>
-          <h3>The Gym College Student Lifestyle</h3>
-        </div>
-        <div className="bottom-part-nav">
-                 <div className="nav">
-            <p className="active">All</p>
-            <p>Foundations period</p>
-            <p>Sports Culture</p>
-            <p>Project Phase</p>
-          </div>
-        </div>
-           
 
-        <div className="images">
-          <div className="image">
-            <img src={image5} alt="" />
-            <p>lorem ipsum</p>
+  const navigate = useNavigate();
+  return (
+    <>
+
+  
+
+               <div className="top-bar">
+      <div className="top-left">
+        <h3>Students management platform</h3> 
+        <h2>STUDENTSYNC <br />
+        MANAGEMENT WEB APP
+        </h2>
+        <p>Students for Academic Year 2025/2026</p>
+          
+
+          <div className="top-btn">
+            <button className="learn-more">Learn more</button>
+            <button className="all-student" onClick={()=>navigate("/allstudent")}>All students</button>
           </div>
-          <div className="sportImageContainer">
-            <img src={image6} alt=""  className="sportImage"/>
-            <p className="sportData">Sport Culture</p>
-          </div>
-          <div className="image">
-            <img src={image7} alt="" />
-            <p>lorem ipsum</p>
-          </div>
-        </div>
       </div>
-    </div>
+      <div className="top-right">
+        <div>
+          <img src={image1} alt="" className="image1"/>
+        </div>
+         <div className="top-images">
+             <img src={image2} alt="" className="images"/>
+             <img src={image3} alt="" className="images"/>
+             <img src={image4} alt=""  className="images"/>
+         </div>
+      </div>
+         
+        
+                </div>
+
+
+                <div className="middle-content">
+                  <p>Vibrant Culture</p>
+                  <h4>The Gym College Students management</h4>
+                  <div className="middle-cards">
+                        <div className="middle-card" id="card1">
+                          <h3> <span id="icon1"><VolunteerActivismIcon className="icon1" /></span>
+                           Digital Transformation</h3>
+                            <p>
+                                Digital transformation empowers students with tools and skills
+                                that extend beyond technical proficiency, fostering a learning
+                                environment where ethical digital citizenship and proper online
+                                conduct become the bedrock of their future success in an
+                                increasingly connected world.
+                              </p>
+                        </div>
+
+                        <div className="middle-card" id="card2">
+                          
+                                        <h3><span id="icon2"><SnoozeRoundedIcon className="icon2"/></span>  Discipline and productive</h3>
+                  
+                                        <p>
+                                            Discipline in time, as well as discipline in all matters and
+                                            possessions. Organized and able to manage their agenda/activities
+                                            so that all their time can be valuable and beneficial.
+                                          </p>
+                        </div>
+
+                        <div className="middle-card">
+                          
+                                        <h3><span id="icon3"> <DirectionsRunRoundedIcon className="icon3"/></span> Race towards goodness</h3>
+                  
+                                        <p>
+                                          Competing and striving in goodness. Having speed and accuracy in
+                                          doing good deeds. Trained to act swiftly in matters, completing
+                                          tasks quickly and efficiently.
+                                        </p>
+                        </div>
+                  </div>
+                </div>
+
+
+                <div className="bottom-content">
+                       <p>Gallery</p>
+          <h4>The Gym College Student Lifestyle</h4>
+
+                      <ul className="bottom-link">
+                        <li>all </li>
+                        <li>Foundations period</li>
+                        <li>Sports Culture</li>
+                        <li>Project Phase</li>
+                      
+                      </ul>
+
+                      <div className="bottom-images">
+                        <img src={image5} alt=""  className="bottom-image"/>
+                        <img src={image6} alt=""  className="bottom-image"/>
+                        <img src={image7} alt=""  className="bottom-image"/>
+                      </div>
+                      <p id="bottom-p">More pictures <NavigateNextIcon/></p>
+                </div>
+   
+    
+    
+    </>
   );
 };
 export default HomePage

@@ -8,11 +8,14 @@ import React, { useEffect, useState } from "react";
 import { studentService } from '../lib/api';
 import useStudentStore from "../store/studentStore";
 import { useNavigate } from 'react-router-dom';
+import Add from '../components/addNewStudent'; 
+import modalStyles from './Modal.module.css'; 
 
 const StudentTable = () => {
   const [students, setStudents] = useState([]);
   const [message, setMessage] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
+  const [showAddForm, setShowAddForm] = useState(false); 
   const studentsPerPage = 10;
 
   const { loading } = useStudentStore();
@@ -30,6 +33,7 @@ const StudentTable = () => {
     getData();
   }, []);
 
+  
   const deleteFunction = async (id) => {
     await studentService.deleteStudent(id);
     setStudents(prev => prev.filter(student => student.studentId !== id));
@@ -41,7 +45,6 @@ const StudentTable = () => {
     navigate(`/student/${id}`);
   };
 
-
   const totalPages = Math.ceil(students.length / studentsPerPage);
   const indexOfLastStudent = currentPage * studentsPerPage;
   const indexOfFirstStudent = indexOfLastStudent - studentsPerPage;
@@ -49,7 +52,11 @@ const StudentTable = () => {
 
   return (
     <div className={Tablecss.mainstudentContainer}>
-      <SearchBar setStudents={setStudents} />
+      <SearchBar setStudents={setStudents} setShowAddForm={setShowAddForm}/>
+
+      <div style={{ marginBottom: '20px', textAlign: 'right' }}>
+        
+      </div>
 
       {loading && (
         <div className={Tablecss.loaderContainer}>
@@ -62,26 +69,27 @@ const StudentTable = () => {
           Delete student is done successfully <DoneIcon />
         </p>
       )}
-  <div className={Tablecss.tableResponsiveWrapper}>
-      <table className={Tablecss.studentTable}>
-        <thead>
-          <tr>
-            <th>Profile</th>
-            <th>Username</th>
-            <th>Student ID</th>
-            <th>Enrollment Date</th>
-            <th>Status</th>
-            <th>Action</th>
-          </tr>
-        </thead>
 
-        <tbody>
-          {currentStudents.map((student) => (
-            <tr key={student.id} className={Tablecss.trow}>
-              <td data-label="Profile">
+      <div className={Tablecss.tableResponsiveWrapper}>
+        <table className={Tablecss.studentTable}>
+          <thead>
+            <tr>
+              <th>Profile</th>
+              <th>Username</th>
+              <th>Student ID</th>
+              <th>Enrollment Date</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            {currentStudents.map((student) => (
+              <tr key={student.id} className={Tablecss.trow}>
+                <td data-label="Profile">
                   <div className={Tablecss.profileImage}>
-                 <img src={Image} alt={student.name} className={Tablecss.profile} />
-                {student.name}
+                    <img src={Image} alt={student.name} className={Tablecss.profile} />
+                    {student.name}
                   </div>
                 </td>
                 <td data-label="Username">{`${student.firstName} ${student.lastName}`}</td>
@@ -92,12 +100,12 @@ const StudentTable = () => {
                   <DeleteIcon onClick={() => deleteFunction(student.studentId)} />
                   <EditIcon className={Tablecss.EditIcon} onClick={() => handleNavigate(student.id)} />
                 </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-</div>
-    
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
       <div className={Tablecss.paginationContainer}>
         <button
           className={Tablecss.pageButton}
@@ -139,6 +147,16 @@ const StudentTable = () => {
           Next
         </button>
       </div>
+
+    
+      {showAddForm && (
+        <div className={modalStyles.modalOverlay}>
+          <div className={modalStyles.modalWrapper}>
+            <Add onClose={() => setShowAddForm(false)} />
+            <button className={modalStyles.modalClose} onClick={() => setShowAddForm(false)}>×</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

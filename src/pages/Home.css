@@ -1,273 +1,304 @@
 @import '../main.css';
 
-.home {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: var(--white-color);
-  padding: 2rem;
-  color: #222;
-}
-
-.topDiv {
+.top-bar {
   display: flex;
- gap: 20px;
-  align-items: center;
   flex-wrap: wrap;
-  margin-bottom: 4rem;
+  justify-content: space-between;
+  gap: 60px;
+  padding: 20px;
 }
 
-.left h4 {
-  color: var( --green-content);
-  font-size: 23px;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
+.top-left {
+  flex: 1 1 400px;
+  padding-top: 80px;
 }
 
-.left h1 {
-  font-size: 2.5rem;
-  font-weight: 800;
-  margin-bottom: 1rem;
+.top-left h3 {
+  color: var(--green-content);
+}
+
+.top-left h2 {
   color: var(--dark-green);
-  overflow: hidden;
-}
-
-.left p {
-  margin-bottom: 1.5rem;
-  color:rgb(253, 183, 32);
-  font-size: 23px;
   font-weight: 700;
+  font-size: clamp(24px, 5vw, 30px);
 }
 
-.buttons button {
-  background-color: white;
-  border: 2px solid green;
-  padding: 0.6rem 1.2rem;
-  margin-right: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: 0.3s;
+.top-left p {
+  color: rgb(209, 132, 32);
+  font-weight: bolder;
+  margin-top: 5px;
 }
-.buttons{
-    display: flex;
-    gap: 30px;
+
+.top-btn {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 23px;
+  padding-top: 20px;
 }
-.buttons button:hover {
-  background-color: green;
-  color: white;
+
+.learn-more {
+  color: var(--green-content);
+  font-weight: bolder;
 }
-#all-btn{
-    background-color: var(--green-content);
-    color: var(--white-color);
-    border: none !important
+
+.all-student {
+  color: var(--white-color);
+  background-color: var(--green-content);
+  font-weight: bolder;
 }
-.imagesDiv {
+
+.image1 {
+  width: 100%;
+  max-width: 630px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.top-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.images {
+  width: 100%;
+  max-width: 142px;
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+.top-right {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  flex: 1 1 300px;
 }
 
-.topImage {
-  width: 550px;
-  border-radius: 10px;
-}
-.images{
-    display: flex;
-    gap: 20px;
-}
-.images img {
-   
-  width: 162px;
-  height: 162px;
-  border-radius: 5px;
-  margin-right: 0.5rem;
+.middle-content {
+  padding-top: 70px;
 }
 
-.secondPart .head p,
-.bottomPart .head p {
-  color: var(--green-content);
-  font-size: 23px;
-  font-weight: 800;
+.middle-content p,
+.bottom-content p {
   text-align: center;
-  text-transform: uppercase;
-  margin-bottom: 0.4rem;
+  font-weight: bolder;
+  color: var(--green-content);
 }
 
-.secondPart .head h2,
-.bottomPart .head h3 {
-    color: var(--dark-green);
-    text-align: center;
-  font-size: 1.8rem;
+.middle-content h4,
+.bottom-content h4 {
+  text-align: center;
+  color: var(--dark-green);
   font-weight: 700;
-  margin-bottom: 2rem;
+  font-size: clamp(18px, 3vw, 20px);
+  margin: 20px 0;
 }
 
-.cards {
+.middle-cards {
   display: flex;
-  gap: 2rem;
   flex-wrap: wrap;
+  gap: 13px;
+  justify-content: center;
 }
 
-.card {
-  flex: 1;
-  min-width: 250px;
-  border: 1px solid #ddd;
+.middle-card {
+  flex: 1 1 320px;
+  max-width: 370px;
+  height: auto;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 10px;
-  padding: 1rem;
-  background-color: #f9f9f9;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.card .head {
+#card1 {
+  height: auto;
+  min-height: 300px;
+}
+
+.middle-card h3 {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
-  margin-bottom: 1rem;
+  gap: 5px;
+  margin-bottom: 9px;
 }
 
-.card .head .icon {
-  color: rebeccapurple;
-}
-#displined-card{
-    background-color: rebeccapurple;
-    color: var(--white-color);
-}
-#displined-card p{
-    color: var(--white-color);
-}
-.card h3 {
-  font-size: 1.2rem;
-  margin: 0;
+.middle-card p {
+  color: black;
+  font-weight: 400;
 }
 
-.card p {
-  color: #555;
-  font-size: 0.95rem;
-}
-.bottomPart{
-    margin: 30px;
-}
-.bottom-part-nav{
-    display: flex;
-    justify-content: center;
-}
-.nav {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 2rem;
-  position: relative;
-  border-bottom: 3px solid #eee;
-  padding-bottom: 3px;
-  margin-bottom: 20px;
-  width: 60%;
-  
+.icon1 {
+  color: rgb(241, 23, 176);
 }
 
-.nav p {
-  margin: 0;
-  font-size: 20px;
-  color: #555;
-  font-weight: 500;
-  cursor: pointer;
-  position: relative;
-  padding-bottom: 7px;
-  transition: color 0.3s;
-}
-
-.nav p.active {
-  color: var(--green-content); 
-  font-weight: 600;
-  overflow: hidden;
-}
-
-.nav p.active::after {
-  content: "";
-  position: absolute;
-  bottom: 2px;
-  left: 0;
-  width: 100%;
-  height: 5px;
-  background-color: #7AC943;
-  border-radius: 2px;
-  z-index: 5000;
-}
-
-
-.bottomPart .images {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.bottomPart .image {
-  flex: 1;
-  min-width: 200px;
-}
-
-.bottomPart .image img {
-  width: 100%;
+#icon1 {
+  padding: 7px;
+  background-color: rgb(241, 222, 228);
   border-radius: 10px;
 }
 
-.bottomPart .image p {
-  margin-top: 0.5rem;
-  text-align: center;
-  color: #444;
-}
-.sportImageConatainer{
-display: flex;
-}
-.sportImage{
-position: relative;
+.icon2 {
+  color: rgb(245, 240, 243);
 }
 
+#icon2 {
+  padding: 7px;
+  background-color: rgb(151, 65, 207);
+  border-radius: 10px;
+}
 
-/* Responsive Design */
+#card2,
+#card2 p {
+  background-color: blueviolet;
+  color: var(--white-color);
+}
 
-@media (max-width: 992px) {
-  .topDiv {
-    flex-direction: column;
-    align-items: flex-start;
+.icon3 {
+  color: rgb(151, 147, 86);
+}
+
+#icon3 {
+  padding: 7px;
+  background-color: rgb(231, 226, 235);
+  border-radius: 10px;
+}
+
+.bottom-content {
+  padding-top: 20px;
+  margin-bottom: 30px;
+}
+
+.bottom-link {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(16px, 3vw, 20px);
+  font-weight: 700;
+}
+
+.bottom-link li {
+  position: relative;
+  cursor: pointer;
+  padding-bottom: 5px;
+  transition: color 0.3s ease;
+}
+
+.bottom-link li:hover {
+  color: var(--green-content);
+}
+
+.bottom-link li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--green-content);
+  transition: width 0.3s ease;
+}
+
+.bottom-link li:hover::after {
+  width: 100%;
+}
+
+.bottom-images {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.bottom-images img {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+#bottom-p {
+  padding-right: 50px;
+  display: flex;
+  align-self: end;
+  align-items: center;
+  justify-content: flex-end;
+  transition: color 0.5s ease-in-out;
+  margin-top: 10px;
+}
+
+#bottom-p:hover {
+  color: bisque;
+  cursor: pointer;
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .middle-card {
+    flex: 1 1 100%;
+    font-size: 22px;
   }
 
-  .imagesDiv {
-    align-self: center;
-    margin-top: 1.5rem;
+  .bottom-content {
+    font-size: 28px;
   }
 
-  .cards {
-    flex-direction: column;
+  .bottom-images img {
+    max-width: 300px;
   }
 
-  .bottomPart .images {
-    flex-direction: column;
-    align-items: center;
+  #bottom-p {
+    padding-right: 20px;
   }
 }
 
-@media (max-width: 600px) {
-  .left h1 {
-    font-size: 1.8rem;
+/* Mobile */
+@media (max-width: 767px) {
+  .top-left h2 {
+    font-size: 25px;
   }
 
-  .buttons button {
-    margin-bottom: 0.8rem;
+  .image1 {
     width: 100%;
+    height: auto;
   }
 
-  .card h3 {
-    font-size: 1rem;
+  .top-images img {
+    width: 140px;
+    height: 140px;
   }
 
-  .card p {
-    font-size: 0.9rem;
-  }
-
-  .bottomPart .nav {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .bottomPart .image {
+  .middle-card {
     width: 100%;
+    font-size: 18px;
+  }
+
+  .bottom-content {
+    font-size: 24px;
+  }
+
+  .bottom-link {
+    font-size: 14px;
+    gap: 15px;
+  }
+
+  .bottom-images img {
+    width: 120px;
+  }
+
+  #bottom-p {
+    font-size: small;
+    text-align: left;
+    padding: 0;
   }
 }

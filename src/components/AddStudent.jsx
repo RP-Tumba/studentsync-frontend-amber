@@ -1,7 +1,7 @@
 import { useReducer } from 'react';
-import style from './AddStudent.module.css';
+import style from './newstudent.module.css';
 import { studentService } from '../lib/api';
-import { Link } from 'react-router-dom';
+import logo from '../assets/logo.png';
 
 const initialState = {
   firstName: '',
@@ -12,6 +12,7 @@ const initialState = {
   contactNumber: '',
   enrollmentDate: '',
 };
+
 const reducerFunction = (state, action) => {
   switch (action.type) {
     case 'set_firstname':
@@ -34,10 +35,11 @@ const reducerFunction = (state, action) => {
       return state;
   }
 };
-const Add = () => {
+
+const Add = ({ onClose }) => {
   const [state, dispatch] = useReducer(reducerFunction, initialState);
 
-  const handleSubmission = async e => {
+  const handleSubmission = async (e) => {
     e.preventDefault();
 
     const formData = {
@@ -54,88 +56,41 @@ const Add = () => {
     if (newstudent) {
       dispatch({ type: 'reset' });
       console.log(newstudent);
+      if (onClose) onClose();
     }
   };
-  return (
-    <>
-      <div className={style.flex}>
-        <form onSubmit={handleSubmission}>
-          <div className={style.grid}>
-            <div className={style.head}>
-              <h2>
-                <img />
-                &nbsp;&nbsp;&nbsp; STUDENTSYNC
-              </h2>
-              <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add student</h3>
-            </div>
-            <div className={style.one}>
-              <label>First Name</label>
-              <br />
-              <input
-                type="text"
-                value={state.firstName}
-                onChange={e => dispatch({ type: 'set_firstname', payload: e.target.value })}
-              />
-            </div>
-            <div className={style.two}>
-              <label>Last Name</label>
-              <input
-                type="text"
-                value={state.lastName}
-                onChange={e => dispatch({ type: 'set_lastname', payload: e.target.value })}
-              />
-            </div>
-            <div className={style.three}>
-              <label>Date of Birth</label>
-              <input
-                type="date"
-                value={state.dateOfBirth}
-                onChange={e => dispatch({ type: 'set_dateofbirth', payload: e.target.value })}
-              />
-            </div>
-            <div className={style.four}>
-              <label>Student ID</label>
-              <input
-                type="text"
-                value={state.studentId}
-                onChange={e => dispatch({ type: 'set_studentid', payload: e.target.value })}
-              />
-            </div>
-            <div className={style.five}>
-              <label>Email</label>
-              <input
-                type="email"
-                value={state.email}
-                onChange={e => dispatch({ type: 'set_email', payload: e.target.value })}
-              />
-            </div>
-            <div className={style.six}>
-              <label>Contact Number</label>
-              <input
-                type="text"
-                value={state.contactNumber}
-                onChange={e => dispatch({ type: 'set_contactnumber', payload: e.target.value })}
-              />
-            </div>
-            <div className={style.seven}>
-              <label>Enrollment Date</label>
-              <input
-                type="date"
-                value={state.enrollmentDate}
-                onChange={e => dispatch({ type: 'set_enroll', payload: e.target.value })}
-              />
-            </div>
-            <div className={style.butto}>
-              <button type="submit" className={style.add}>
-                Add
-              </button>
 
-              <button className={style.cancel}>Cancel</button>
-            </div>
+  return (
+    <div className={style.page}>
+      <div className={style.container}>
+        <form onSubmit={handleSubmission} className={style.form}>
+          <div className={style.header}>
+            <img src={logo} alt="Logo" className={style.logo} />
+            <h2>STUDENTSYNC</h2>
+            <p>Add new student</p>
+          </div>
+
+          <div className={style.inputGroup}>
+            <input type="text" placeholder="First name" value={state.firstName} onChange={e => dispatch({ type: 'set_firstname', payload: e.target.value })} />
+            <input type="text" placeholder="Last name" value={state.lastName} onChange={e => dispatch({ type: 'set_lastname', payload: e.target.value })} />
+          </div>
+
+          <div className={style.inputGroup}>
+            <input type="date" placeholder="Date of Birth" value={state.dateOfBirth} onChange={e => dispatch({ type: 'set_dateofbirth', payload: e.target.value })} />
+            <input type="text" placeholder="Student ID" value={state.studentId} onChange={e => dispatch({ type: 'set_studentid', payload: e.target.value })} />
+          </div>
+
+          <input type="email" placeholder="Email" value={state.email} onChange={e => dispatch({ type: 'set_email', payload: e.target.value })} />
+          <input type="text" placeholder="Contact Number" value={state.contactNumber} onChange={e => dispatch({ type: 'set_contactnumber', payload: e.target.value })} />
+          <input type="date" placeholder="Enrollment Date" value={state.enrollmentDate} onChange={e => dispatch({ type: 'set_enroll', payload: e.target.value })} />
+
+          <div className={style.buttons}>
+            <button type="submit" className={style.addBtn}>Add</button>
+    
           </div>
         </form>
       </div>
-    </>
+    </div>
   );
 };
 
