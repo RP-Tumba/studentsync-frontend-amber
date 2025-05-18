@@ -7,10 +7,14 @@ const Navbar = () => {
         <div className={style.header}>
           <div className={style.head1}>STUDENTSYNC</div>
           <div className={style.head2}>
-            <Link to="/home">Home</Link>
+            <Link to="/">
+              <button>Home</button>
+            </Link>
           </div>
           <div className={style.head3}>
-            <Link to="/add">Add Student</Link>
+            <Link to="/add">
+              <button>Add Student</button>
+            </Link>
           </div>
           <div className={style.head4}>
             <Link to="/All">

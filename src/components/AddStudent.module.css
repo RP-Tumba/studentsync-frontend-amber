@@ -69,15 +69,19 @@ button{
   padding-left: 40px;
     padding-right: 40px;
 }
-
+input:focus{
+    background-color: rgb(253, 249, 27);
+}
 input{
-    background-color: white;
+    background-color: rgb(255, 255, 255);
  height: 40px;
  width: 100%;
  border:rgb(0, 0, 0) 2px solid;
  border-radius: 8px;
  color: rgb(0, 0, 0);
  font-size: large;
+ padding-left: 10px;
+
 }
 .cancel{
     padding-left: 40px;

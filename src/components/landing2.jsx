@@ -1,7 +1,7 @@
 import style from './Body.module.css';
 import Galleries from './landingPage';
 import heart from '../assets/body/heart.png';
-import frame from '../assets/body/frame.png';
+// import frame from '../assets/body/frame.png';
 import vector from '../assets/body/vector.png';
 import Bodyy from './body';
 
@@ -44,9 +44,7 @@ const Body = () => {
               </p>
             </div>
             <div className={style.three}>
-              <h2>
-                <img src={frame} width={50} height={30}></img> Race Towards Goodness
-              </h2>
+              <h2>{/* <img src={frame} width={50} height={30}></img> Race Towards Goodness */}</h2>
               <br></br>
               <p>
                 Competing and striving in goodness. Having speed and accuracy in doing good deeds.

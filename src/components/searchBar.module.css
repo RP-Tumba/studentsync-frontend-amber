@@ -58,7 +58,8 @@ font-size: 18px;
   border-radius: 8px;
   outline: none;
   outline: none !important; 
-  transition:  all 0.5ms ease-in-out,;
+  transition:  all 0.5ms ease-in-out;
+  color:white;
 
 }
 .addStudent:hover{

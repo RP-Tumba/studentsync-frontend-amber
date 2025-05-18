@@ -14,7 +14,7 @@ h1{
     background-color: white;
     border:2px #7ccf00 solid;
     color:#7ccf00;
-    padding-right:20px
+
 }
 .but2{
     background-color: white;
@@ -22,7 +22,7 @@ h1{
     color:#80ce1a;
 }
 button{
-    flex-basis: 130px;
+    flex-basis: 140px;
   
 }
 button:focus{
