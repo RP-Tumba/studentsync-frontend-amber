@@ -1,0 +1,91 @@
+
+.SearchBarInput{
+border: none;
+background: none;
+font-size: 18px;
+}
+.SearchBarInput::placeholder{
+  padding: 23px 0;
+}
+.SearchSection{
+  padding: 10px;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ border-radius: 15px;
+ background-color: rgba(244, 244, 244, 1);
+ 
+}
+.searchcontainer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+ 
+}
+.studentTableName{
+ color: rgba(131, 199, 39, 1);
+ font-size: 38px;
+}
+.searchLeft{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+   gap: 30px;
+}
+.SearchIcon{
+  font-size: 90px;
+  
+}
+.addSection{
+  display: flex;
+  flex-direction: row;
+  padding-right: 10px;
+}
+.headerPart{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.addStudent{
+  background-color: rgba(131, 199, 39, 1);
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  color: var(--white-color);
+  font-weight: 600;
+  border: none;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 8px;
+  outline: none;
+  outline: none !important; 
+  transition:  all 0.5ms ease-in-out,;
+
+}
+.addStudent:hover{
+  background-color:  rgb(61, 104, 1);
+
+}
+.addIcon{
+  background-color: rgba(131, 199, 39, 1);
+  position: relative;
+  margin-right: -12px;
+  height: 45px;
+  border: none;
+  outline:none ;
+  outline: none !important;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    
+.studentTableName{
+ font-size: 23px;
+}
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+
+}
