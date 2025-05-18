@@ -1,5 +1,5 @@
 import React, { useEffect, useState,useReducer } from 'react'
-import styles from './StudentDetails.module.css';
+import styles from './css/StudentDetails.module.css';
 import SearchIcon from '@mui/icons-material/Search';
 import EmailIcon from '@mui/icons-material/Email';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
@@ -93,7 +93,6 @@ const handleSubmission =async(e)=>{
 };
 
    handleEdit()
-   console.log(formData);
    const updateData = await studentService.updateStudent(id,formData);
   
    if(updateData.success==true){
@@ -103,7 +102,7 @@ const handleSubmission =async(e)=>{
  setMessage(updateData.message)
    }
 }
- console.log(message)
+
 
   return (
    <>

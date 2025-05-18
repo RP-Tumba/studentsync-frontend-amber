@@ -2,25 +2,29 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import DoneIcon from '@mui/icons-material/Done';
 import Image from '../assets/images/OIP2.jpeg';
-import Tablecss from '../components/studentTable.module.css';
+import Tablecss from './css/studentTable.module.css';
 import SearchBar from "./searchBar";
 import React, { useEffect, useState } from "react";
 import { studentService } from '../lib/api';
 import useStudentStore from "../store/studentStore";
 import { useNavigate } from 'react-router-dom';
 import Add from '../components/addNewStudent'; 
-import modalStyles from './Modal.module.css'; 
-
+import modalStyles from './css/Modal.module.css'; 
+import { useLocation } from 'react-router-dom';
 const StudentTable = () => {
   const [students, setStudents] = useState([]);
   const [message, setMessage] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [showAddForm, setShowAddForm] = useState(false); 
+  const [showAddForm, setShowAddForm] = useState(false);
+
+   
   const studentsPerPage = 10;
 
   const { loading } = useStudentStore();
   const navigate = useNavigate();
-
+   const location = useLocation();
+  const messages = location.state?.message;
+  console.log(messages)
   useEffect(() => {
     const getData = async () => {
       try {
@@ -69,6 +73,11 @@ const StudentTable = () => {
           Delete student is done successfully <DoneIcon />
         </p>
       )}
+       {messages && (
+  <p className={Tablecss.success}>
+    {messages} <DoneIcon />
+  </p>
+)}
 
       <div className={Tablecss.tableResponsiveWrapper}>
         <table className={Tablecss.studentTable}>

@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import logo from '../assets/logo.png';
-import './navbar.css';
+import './css/navbar.css';
 
 const Navbar = () => {
   const [isOpen, setIsopen] = useState(false);

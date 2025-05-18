@@ -1,7 +1,8 @@
-import { useReducer } from 'react';
-import style from './newstudent.module.css';
+import { useReducer, useState } from 'react';
+import style from './css/newstudent.module.css';
 import { studentService } from '../lib/api';
 import logo from '../assets/logo.png';
+import { useNavigate } from 'react-router-dom';
 
 const initialState = {
   firstName: '',
@@ -37,7 +38,9 @@ const reducerFunction = (state, action) => {
 };
 
 const Add = ({ onClose }) => {
+  const navigate = useNavigate();
   const [state, dispatch] = useReducer(reducerFunction, initialState);
+  const[message,setMessage] = useState("");
 
   const handleSubmission = async (e) => {
     e.preventDefault();
@@ -53,10 +56,14 @@ const Add = ({ onClose }) => {
     };
 
     const newstudent = await studentService.createStudent(formData);
-    if (newstudent) {
+    if (newstudent.success==true) {
       dispatch({ type: 'reset' });
-      console.log(newstudent);
       if (onClose) onClose();
+       navigate("/allstudent", {
+    state: { message: `${state.firstName} ${state.lastName} is inserted` }
+  });
+    }else{
+      setMessage(newstudent.message);
     }
   };
 
@@ -69,7 +76,8 @@ const Add = ({ onClose }) => {
             <h2>STUDENTSYNC</h2>
             <p>Add new student</p>
           </div>
-
+               {message.includes("students_email_key") && <p className={style.checking}>Email is already exist.</p>}
+                        {message.includes("students_student_id_key")&&<p className={style.checking}>the student-id is already exist</p>}
           <div className={style.inputGroup}>
             <input type="text" placeholder="First name" value={state.firstName} onChange={e => dispatch({ type: 'set_firstname', payload: e.target.value })} />
             <input type="text" placeholder="Last name" value={state.lastName} onChange={e => dispatch({ type: 'set_lastname', payload: e.target.value })} />

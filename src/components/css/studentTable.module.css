@@ -17,7 +17,12 @@
   margin-top: 0;
   border-collapse: collapse;
 }
-
+.success{
+  color: var(--green-content);
+  font-size: 15px;
+  text-align: center;
+  font-weight: 800;
+}
 .studentTable thead {
   background-color: rgba(235, 249, 218, 1);
 }

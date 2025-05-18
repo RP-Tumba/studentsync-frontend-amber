@@ -22,7 +22,11 @@
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   height: auto; /* Ensures modal adjusts to content */
 }
-
+.checking{
+  text-align: center;
+  color: red;
+  font-weight: 700;
+}
 .form {
   display: flex;
   flex-direction: column;

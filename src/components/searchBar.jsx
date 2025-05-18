@@ -2,7 +2,7 @@
 import SearchIcon from '@mui/icons-material/Search';
 import StudentTable from './studentTable';
 import AddIcon from '@mui/icons-material/Add';
-import SearchCss from '../components/searchBar.module.css';
+import SearchCss from './css/searchBar.module.css';
 import { useEffect, useState } from 'react';
 import {studentService} from '../lib/api';
 const SearchBar=({setStudents,setShowAddForm})=>{

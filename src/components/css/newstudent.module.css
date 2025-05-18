@@ -45,7 +45,11 @@
   font-size: 29px;
   margin: 6px 0;
 }
-
+.checking{
+  text-align: center;
+  color: red;
+  font-weight: 700;
+}
 .header p {
   font-size: 25px;
   color: #374151;
